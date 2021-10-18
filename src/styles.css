@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  margin: 1rem 0;
+}
+
+table {
+  table-layout: fixed;
+  width: 70%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+}
+
+th,
+tr {
+  border-bottom: 1px solid grey;
+}
+
+td {
+  border-left: 1px solid black;
+}
+
+td:nth-child(1) {
+  border-left: none;
+}
+
+th {
+  padding: 0.75rem;
+}
+
+td {
+  padding: 0.25rem;
+}
+
+button {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin: 0.2rem;
+}
+
+button:hover {
+  background-color: lightgrey;
+}
+
+tr:hover {
+  background-color: lightgrey;
+}
+
+thead tr:hover {
+  background-color: #fff;
+}
+
+.pagination-container {
+  margin: 0.5rem 0;
+}
+
+.poke-id {
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.control-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.export-btn {
+  margin: 0 1.5rem;
+}
+
+.type-selection-container select {
+  width: 125px;
+  text-align: left;
+}
+
+.multiselect-dropdown-list {
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}

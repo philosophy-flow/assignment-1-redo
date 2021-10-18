@@ -1,0 +1,46 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container-label {
+  margin-right: 5px;
+}
+
+.selector-container {
+  border: 1px solid black;
+  width: 198px;
+  position: relative;
+}
+
+.selector {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+  height: 150px;
+  overflow: scroll;
+}
+
+.selector label {
+  margin-left: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.drop-down-btn {
+  background-color: inherit;
+  border: 1px solid blue;
+  width: 198px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  border-radius: 0;
+}
+
+.upside-down {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/5012d86954.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>PokeTable</title>
+  </head>
+  <body>
+    <h1>PokeTable</h1>
+
+    <p id="poke-id" class="poke-id"></p>
+    <table id="poke-table">
+      <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Primary Type</th>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+
+    <section class="control-panel">
+      <div class="pagination-container">
+        <button id="prev-btn">Previous</button>
+        <button id="pgn-1" className="active">1</button>
+        <button id="pgn-2">2</button>
+        <button id="pgn-3">3</button>
+        <button id="pgn-4">4</button>
+        <button id="pgn-5">5</button>
+        <button id="pgn-6">6</button>
+        <button id="pgn-7">7</button>
+        <button id="pgn-8">8</button>
+        <button id="pgn-9">9</button>
+        <button id="pgn-10">10</button>
+        <button id="next-btn">Next</button>
+      </div>
+
+      <button id="export-btn" class="export-btn">Export</button>
+    </section>
+
+    <section class="main-container">
+      <span class="container-label">Filter by Type:</span>
+      <div>
+        <button id="drop-down-btn" class="drop-down-btn">
+          <span id="active-selections"></span>
+          <i id="chevron" class="fas fa-caret-down"></i>
+        </button>
+        <div id="selector-container" class="selector-container hidden">
+          <ul id="selector" class="selector"></ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
