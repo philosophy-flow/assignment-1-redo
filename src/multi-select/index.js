@@ -1,27 +1,19 @@
 import "./multi-select.css";
 
-const valuesArr = [
-  "normal",
-  "fire",
-  "water",
-  "grass",
-  "electric",
-  "ice",
-  "fighting",
-  "poison",
-  "ground",
-  "psychic",
-  "bug",
-  "rock",
-  "ghost",
-  "dark",
-  "dragon",
-  "steel",
-  "fairy",
-];
+/*
+This function takes an array of options and an optional callback, and 
+creates a multi-select component. This function returns an array with 
+two functions:
+updateSelectors(callbackParam) -> Allows passing of parameter to callback
+getValues -> Returns an array of currently selected options
 
-export function setupMultiselect(callback, offset = 0) {
-  const inputArr = valuesArr.map((value) => {
+If a callback is provided, it will run every time an option is 
+selected/unselected.
+
+*/
+
+export default function setupMultiselect(optionsArr, callback = null) {
+  const inputArr = optionsArr.map((value) => {
     // create input element
     const inputEl = document.createElement("input");
     inputEl.type = "checkbox";
@@ -61,32 +53,9 @@ export function setupMultiselect(callback, offset = 0) {
   const selectorOptions = selectorChildren.map((child) => child.children[0]);
 
   let checkedArr = [];
-  selectorOptions.forEach((option) => {
-    option.onchange = () => {
-      if (option.checked) {
-        checkedArr.push(option.value);
-      } else {
-        checkedArr = checkedArr.filter((selected) => {
-          return selected !== option.value;
-        });
-      }
+  updateSelectors();
 
-      if (checkedArr.length >= 5) {
-        activeSelections.innerHTML = `${checkedArr.length} types selected`;
-      } else {
-        const toInsert = checkedArr.join(", ");
-        activeSelections.innerHTML = toInsert;
-      }
-
-      callback();
-    };
-  });
-
-  function getTypes() {
-    return checkedArr;
-  }
-
-  function updateSelectors(offset) {
+  function updateSelectors(offset = 0) {
     selectorOptions.forEach((option) => {
       option.onchange = () => {
         if (option.checked) {
@@ -104,10 +73,16 @@ export function setupMultiselect(callback, offset = 0) {
           activeSelections.innerHTML = toInsert;
         }
 
-        callback(offset);
+        if (callback) {
+          callback(offset);
+        }
       };
     });
   }
 
-  return [getTypes, updateSelectors];
+  function getValues() {
+    return checkedArr;
+  }
+
+  return [getValues, updateSelectors];
 }

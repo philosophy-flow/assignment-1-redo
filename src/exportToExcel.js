@@ -1,3 +1,5 @@
+import "table2excel";
+
 export default function exportToExcel(table) {
   // clone table so that hidden nodes can be removed before export
   let exportTable = table.cloneNode(true);

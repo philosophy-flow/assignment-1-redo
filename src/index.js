@@ -1,16 +1,38 @@
 import "./styles.css";
-import "table2excel";
 
+import exportToExcel from "./exportToExcel";
 import renderPokemon from "./renderPokemon";
 import fetchPokemon from "./fetchPokemon";
 import updateActivePagination from "./updateActivePagination";
-import exportToExcel from "./exportToExcel";
-import { setupMultiselect } from "./multi-select";
+import setupMultiselect from "./multi-select";
 
-// set up multiselect;
-// getTypes --> returns selected typeds
-// updateSelectors --> updates onchange callback w/ new offset
-const [getTypes, updateSelectors] = setupMultiselect(main);
+const valuesArr = [
+  "normal",
+  "fire",
+  "water",
+  "grass",
+  "electric",
+  "ice",
+  "fighting",
+  "poison",
+  "ground",
+  "psychic",
+  "bug",
+  "rock",
+  "ghost",
+  "dark",
+  "dragon",
+  "steel",
+  "fairy",
+];
+
+/*
+setupMultiSelect -> creates a multi-select component with given options and callback, returns two functions:
+getTypes --> returns selected options/types
+updateSelectors --> updates onchange callback w/ new offset
+*/
+
+const [getTypes, updateSelectors] = setupMultiselect(valuesArr, main);
 
 // TABLE
 const pokeTable = document.getElementById("poke-table");
